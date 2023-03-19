@@ -8,4 +8,10 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.PWD }}
+          password: ${{ secrets.SSH_PWD }}
+          script_stop: true
+          script: |
+            ls -al
+            touch test.txt
+            echo "hello imooc" >> test.txt
+            cat test.txt
